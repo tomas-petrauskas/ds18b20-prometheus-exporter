@@ -16,6 +16,7 @@ services:
     restart: unless-stopped
 
   exporter:
+    image: ghcr.io/tomas-petrauskas/ds18b20-prometheus-exporter:latest
     build:
         context: .
         dockerfile: Dockerfile
