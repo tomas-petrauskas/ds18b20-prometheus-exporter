@@ -12,7 +12,7 @@ COPY main.py /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose the port that Prometheus will scrape (default: 8000)
-EXPOSE 8105
+EXPOSE 80
 
 # Set the entry point to run the script
 CMD ["python", "main.py"]

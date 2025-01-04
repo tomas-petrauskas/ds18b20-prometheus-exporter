@@ -24,8 +24,6 @@ services:
     container_name: temperature_exporter
     networks:
       - temperature
-    expose:
-      - 8105
     volumes:
       - /sys/bus/w1/devices:/sys/bus/w1/devices:ro
 

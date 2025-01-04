@@ -4,7 +4,6 @@ from prometheus_client import start_http_server, Gauge
 from DS18B20dvr.DS18B20 import DS18B20
 
 def get_all_sensors():
-    """Get all DS18B20 sensor IDs connected to the 1-Wire bus."""
     base_path = Path("/sys/bus/w1/devices/w1_bus_master1")
     master_slaves_path = base_path / "w1_master_slaves"
 
@@ -38,7 +37,7 @@ gauge = Gauge(
     )
 
 if __name__ == '__main__':
-    start_http_server(8105)
+    start_http_server(80)
 
     while True:
         update_gauge(gauge, device_ids)
