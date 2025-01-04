@@ -1,0 +1,1 @@
+Python Exporter for multiple DS18B20 sensors
