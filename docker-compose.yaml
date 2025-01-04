@@ -16,16 +16,15 @@ services:
     restart: unless-stopped
 
   exporter:
-    image: testukas:latest
+    build:
+        context: .
+        dockerfile: Dockerfile
     restart: unless-stopped
     container_name: temperature_exporter
     networks:
       - temperature
     expose:
       - 8105
-    build:
-      context: .
-      dockerfile: Dockerfile
     volumes:
       - /sys/bus/w1/devices:/sys/bus/w1/devices:ro
 
