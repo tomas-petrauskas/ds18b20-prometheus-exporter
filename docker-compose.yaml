@@ -12,6 +12,7 @@ services:
     expose:
       - 9090
     command:
+      - '--storage.tsdb.retention.time=365d'
       - '--config.file=/etc/prometheus/prometheus.yml'
     restart: unless-stopped
 
